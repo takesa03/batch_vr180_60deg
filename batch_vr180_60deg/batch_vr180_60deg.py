@@ -474,6 +474,12 @@ def main():
         glob.glob(os.path.join(args.src, '*.MPO')) +
         glob.glob(os.path.join(args.src, '*.mpo'))
     ))
+    # skip our own outputs (<name>_<N>deg.*) to avoid double conversion
+    suffix = f"_{int(args.fov_canvas)}deg"
+    skipped = [p for p in mpo_files if os.path.splitext(os.path.basename(p))[0].endswith(suffix)]
+    mpo_files = [p for p in mpo_files if p not in skipped]
+    for p in skipped:
+        print(f"skip (already converted): {p}")
     print(f"found {len(mpo_files)} MPO file(s) in {args.src}")
 
     ok, failed = [], []

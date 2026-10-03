@@ -1,0 +1,25 @@
+# Python venv
+batch_vr180_60deg/env/
+
+# Visual Studio
+.vs/
+
+# テスト用入出力(容量が大きいので追跡しない)
+batch_vr180_60deg/test_in/
+batch_vr180_60deg/test_out/
+batch_vr180_60deg/test2d_in/
+batch_vr180_60deg/test2d_out/
+batch_vr180_60deg/vr180_out/
+
+# 検証用の実写サンプル(個人の写真データのため)
+batch_vr180_60deg/*.MPO
+batch_vr180_60deg/*.mpo
+batch_vr180_60deg/*.jpg
+batch_vr180_60deg/*.JPG
+
+# 開発時のチャットログ(Shift-JIS、個人の作業メモ)
+batch_vr180_60deg/memo.txt
+
+# Python キャッシュ
+__pycache__/
+*.pyc
